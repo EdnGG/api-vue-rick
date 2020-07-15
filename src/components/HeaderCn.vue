@@ -1,7 +1,14 @@
 <template>
-  <div>
-    <h1>{{ msg }}</h1>
-    <img alt="Vue logo" src="../assets/images/logo.png" />
+  <div class="header">
+    <b-container>
+      <b-row class="text-center">
+        <b-col>
+          <h1>{{ msg }}</h1>
+
+          <img alt="Vue logo" src="../assets/images/logo.png" />
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
@@ -16,18 +23,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.header {
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
 </style>
