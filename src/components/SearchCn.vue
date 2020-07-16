@@ -1,6 +1,12 @@
+
+
+  <!-- Bueno bro para que sigas el proceso primero ve a la linea 89 :) -->
 <template>
   <div class="main-container">
-    <HeaderCn />
+
+  <!-- Asi se pasa una funcion como prop, los : antes de foo es para decirle que vamos a 
+  vamos a hacer un v-bind de la prop foo y que ahi le vamos a pasar la funcion (ahora ve al compoente)  -->
+    <HeaderCn :foo="foo" />
     <b-container class="search">
       <b-row class="text-center">
         <div v-for="character of characters" v-bind:key="character.id">
@@ -80,6 +86,13 @@ export default {
           console.error(err.message);
         });
     },
+
+    //Aqui te dejo un ejemplo de como pasar las props
+    //Bueno primero declara la funcion :) Ahora ve al componente header
+    foo(){
+      console.log('foo')
+    }
+    ,
     changePage(page) {
       this.page = page <= 0 || page > this.pages ? this.page : page;
       this.fetch();

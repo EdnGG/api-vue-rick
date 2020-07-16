@@ -1,5 +1,6 @@
 <template>
   <div class="header">
+    <!-- Listo, ve a la parte de props-->
     <b-container>
       <b-row class="text-center">
         <b-col>
@@ -12,6 +13,9 @@
                 @keyup.enter="$emit.searchData"
               ></b-form-input>
               <b-input-group-append>
+
+    <!-- Y aqui se la poones al boton-->
+                <b-button @click="foo()">Aqui esta el ejemplo crack</b-button>
                 <b-button variant="outline-secondary" @click="$emit.searchData">Go</b-button>
               </b-input-group-append>
             </b-input-group>
@@ -26,9 +30,10 @@
 export default {
   name: "header-cn",
 
-  props: ["search"]
+  // Aqui recibes la prop (que es una funcion)
+  props: ["search",'foo']
   // methods: {
-  // searchData() {
+    // searchData() {
   //   console.log("hello");
   // }
   // }
