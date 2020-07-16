@@ -1,4 +1,4 @@
-# api-chuck-norris
+# vue-api-rick&morty
 
 ## Project setup
 ```
