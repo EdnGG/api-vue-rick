@@ -1,6 +1,6 @@
 <template>
   <div class="main-container">
-    <HeaderCn />
+    <HeaderCn :searchData="searchData" />
     <b-container class="search">
       <b-row class="text-center">
         <div v-for="character of characters" v-bind:key="character.id">
@@ -86,12 +86,11 @@ export default {
     },
     // esta funcion hace que se reinicie la pagina
     // con los primeros 20 resultados del API
+    // Esta es la funcion que deseo usar en HeaderCn
     searchData() {
-      this.$emit(
-        "click",
-        // (this.page = 1), this.fetch()
-        console.log("hello")
-      );
+      this.page = 1;
+      this.fetch();
+      console.log("hello");
     }
   }
 };

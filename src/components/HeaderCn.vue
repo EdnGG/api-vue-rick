@@ -6,13 +6,9 @@
           <h1>This is the Header component</h1>
           <div>
             <b-input-group>
-              <b-form-input
-                v-model="search"
-                placeholder="Search..."
-                @keyup.enter="$emit.searchData"
-              ></b-form-input>
+              <b-form-input placeholder="Search..." @keyup.enter="searchData()"></b-form-input>
               <b-input-group-append>
-                <b-button variant="outline-secondary" @click="$emit.searchData">Go</b-button>
+                <b-button variant="outline-secondary" @click="searchData()">Go</b-button>
               </b-input-group-append>
             </b-input-group>
           </div>
@@ -26,12 +22,7 @@
 export default {
   name: "header-cn",
 
-  props: ["search"]
-  // methods: {
-  // searchData() {
-  //   console.log("hello");
-  // }
-  // }
+  props: ["searchData"]
 };
 </script>
 
