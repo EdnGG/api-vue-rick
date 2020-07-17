@@ -6,9 +6,9 @@
           <h1>This is the Header component</h1>
           <div>
             <b-input-group>
-              <b-form-input placeholder="Search..." @keyup.enter="searchData()"></b-form-input>
+              <b-form-input placeholder="Search..." v-model="search" v-on:keyup.enter="searchData"></b-form-input>
               <b-input-group-append>
-                <b-button variant="outline-secondary" @click="searchData()">Go</b-button>
+                <b-button variant="outline-secondary" v-on:click="searchData">Go</b-button>
               </b-input-group-append>
             </b-input-group>
           </div>
@@ -21,8 +21,7 @@
 <script>
 export default {
   name: "header-cn",
-
-  props: ["searchData"]
+  props: ["search", "searchData"]
 };
 </script>
 

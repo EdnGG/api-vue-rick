@@ -1,6 +1,7 @@
 <template>
   <div class="main-container">
     <HeaderCn :searchData="searchData" />
+    <!-- checar aqui -->
     <b-container class="search">
       <b-row class="text-center">
         <div v-for="character of characters" v-bind:key="character.id">
@@ -10,7 +11,7 @@
             v-bind:img-alt="character.name"
             img-top
             tag="article"
-            style="max-width: 20rem;"
+            style="max-width: 15rem;"
             class="mb-2"
           >
             <template v-slot:header>
@@ -64,7 +65,8 @@ export default {
   methods: {
     fetch() {
       const params = {
-        page: this.page
+        page: this.page,
+        name: this.search
       };
       axios
         // { params } for sending type query params
