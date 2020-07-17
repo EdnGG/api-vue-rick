@@ -1,6 +1,6 @@
 <template>
   <div class="main-container">
-    <HeaderCn :searchData="searchData" />
+    <HeaderCn :searchData="searchData" @searchCharacter="getApiCharacter" />
     <!-- checar aqui -->
     <b-container class="search">
       <b-row class="text-center">
@@ -93,6 +93,10 @@ export default {
       this.page = 1;
       this.fetch();
       console.log("hello");
+    },
+    getApiCharacter(searchQuery) {
+      this.page = 1;
+      this.search, this.fetch(), console.log(searchQuery);
     }
   }
 };
