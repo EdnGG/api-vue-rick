@@ -1,6 +1,6 @@
 <template>
   <div class="main-container">
-    <HeaderCn :searchData="searchData" @searchCharacter="getApiCharacter" />
+    <HeaderCn />
     <!-- checar aqui -->
     <b-container class="text-center main">
       <b-row class="text-center">
@@ -41,64 +41,36 @@
 </template>
 
 <script>
-import axios from "axios";
+//import axios from "axios";
 import HeaderCn from "./HeaderCn";
+import { mapState } from "vuex";
+
 //import api from "../fetch-api/api.js";
 
 export default {
   name: "search-cn",
   data: function() {
     return {
-      characters: [],
       URL: "https://rickandmortyapi.com/api/character/",
       page: 1,
       pages: 1,
       searchQuer: ""
     };
   },
+  computed: {
+    ...mapState(["characters"])
+  },
   components: {
     HeaderCn
   },
   created() {
-    this.fetch();
+    //this.fetch();
   },
   methods: {
-    fetch() {
-      const params = {
-        page: this.page,
-        name: this.searchQuer
-      };
-      axios
-        // { params } for sending type query params
-        //  "https://rickandmortyapi.com/api/character/?page=<>"
-        .get(this.URL, { params })
-        .then(res => {
-          this.characters = res.data.results;
-          console.log(res.data);
-          this.pages = res.data.info.pages;
-          console.log(this.pages);
-          console.log(` hello there ${name}`);
-        })
-        .catch(err => {
-          console.error(err.message);
-        });
-    },
     changePage(page) {
-      this.page = page <= 0 || page > this.pages ? this.page : page;
-      this.fetch();
-    },
-    // esta funcion hace que se reinicie la pagina
-    // con los primeros 20 resultados del API
-    // Esta es la funcion que deseo usar en HeaderCn
-    searchData() {
-      this.page = 1;
-      this.fetch();
-      console.log("hello");
-    },
-    getApiCharacter(searchQuery) {
-      this.page = 1;
-      this.fetch(), console.log("valos de searchQuery  " + searchQuery);
-      console.log("saludos " + this.fetch());
+      // this.page = page <= 0 || page > this.pages ? this.page : page;
+      this.$store.dispatch("setPage", page);
+      this.$root.fetch();
     }
   }
 };
