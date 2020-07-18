@@ -2,9 +2,9 @@
   <div class="main-container">
     <HeaderCn :searchData="searchData" @searchCharacter="getApiCharacter" />
     <!-- checar aqui -->
-    <b-container class="search">
+    <b-container class="text-center main">
       <b-row class="text-center">
-        <div v-for="character of characters" v-bind:key="character.id">
+        <div v-for="character of characters" v-bind:key="character.id" class="text-center">
           <b-card
             v-bind:title="character.location.name"
             v-bind:img-src="character.image"
@@ -25,7 +25,7 @@
           </b-card>
         </div>
       </b-row>
-      <b-row class="text-center">
+      <b-row class="pagination text-center">
         <b-col>
           <b-nav tabs align="center" role="navigation" aria-label="pagination" class="pagination">
             <b-nav-item v-on:click="changePage(page -1)">Preview</b-nav-item>
@@ -53,7 +53,7 @@ export default {
       URL: "https://rickandmortyapi.com/api/character/",
       page: 1,
       pages: 1,
-      search: ""
+      searchQuer: ""
     };
   },
   components: {
@@ -66,7 +66,7 @@ export default {
     fetch() {
       const params = {
         page: this.page,
-        name: this.search
+        name: this.searchQuer
       };
       axios
         // { params } for sending type query params
@@ -77,6 +77,7 @@ export default {
           console.log(res.data);
           this.pages = res.data.info.pages;
           console.log(this.pages);
+          console.log(` hello there ${name}`);
         })
         .catch(err => {
           console.error(err.message);
@@ -96,15 +97,24 @@ export default {
     },
     getApiCharacter(searchQuery) {
       this.page = 1;
-      this.search, this.fetch(), console.log(searchQuery);
+      this.fetch(), console.log("valos de searchQuery  " + searchQuery);
+      console.log("saludos " + this.fetch());
     }
   }
 };
 </script>
 
 <style scoped>
-.search {
+.main-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
   margin-top: 2%;
+  margin-bottom: 2%;
+}
+.pagination {
+  margin-top: 6%;
   margin-bottom: 2%;
 }
 </style>

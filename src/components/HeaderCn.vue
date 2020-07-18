@@ -12,7 +12,8 @@
                 @keyup.enter="searchCharacter"
               ></b-form-input>
               <b-input-group-append>
-                <b-button variant="outline-secondary" @click="searchCharacter">Go</b-button>
+                <b-button variant="outline-secondary" @click="getApiCharacter">Go</b-button>
+                <b-button variant="outline-secondary" @click="test">test</b-button>
               </b-input-group-append>
             </b-input-group>
           </div>
@@ -23,18 +24,32 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "header-cn",
   data() {
     return {
-      searchQuery: ""
+      searchQuery: "",
+      searchQuery2: ""
     };
   },
-  props: ["search", "searchData"],
+  props: ["searchQuer", "searchData"],
   methods: {
-    searchCharacter() {
-      this.$emit("searchCharacter", this.searchQuery);
+    // searchCharacter() {
+    //   this.$emit("searchCharacter", this.searchQuery);
+    // },
+    // searchCharacter() {
+    //   this.$store("searchCharacter");
+    // },
+    // getApiCharacter() {
+    //   this.$store("getApiCharacter");
+    // },
+    test() {
+      this.$store.commit("test");
     }
+  },
+  computed: {
+    ...mapState(["getApiCharacter"])
   }
 };
 </script>
