@@ -24,33 +24,27 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+//import { mapState } from "vuex";
 export default {
   name: "header-cn",
   data() {
     return {
-      searchQuery: "",
-      searchQuery2: ""
+      searchQuery: ""
+      //searchQuery2: ""
     };
   },
-  props: ["searchQuer", "searchData"],
   methods: {
-    // searchCharacter() {
-    //   this.$emit("searchCharacter", this.searchQuery);
-    // },
-    // searchCharacter() {
-    //   this.$store("searchCharacter");
-    // },
-    // getApiCharacter() {
-    //   this.$store("getApiCharacter");
-    // },
+    getApiCharacter() {
+      //aqui cambio los states y llamo al api
+      this.$store.dispatch("setPage", 1);
+      this.$store.dispatch("setName", this.searchQuery);
+      this.$root.fetch();
+    },
     test() {
-      this.$store.commit("test");
+      //this.$store.commit("test");
     }
   },
-  computed: {
-    ...mapState(["getApiCharacter"])
-  }
+  computed: {}
 };
 </script>
 

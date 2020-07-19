@@ -14,6 +14,15 @@ export default {
   components: {
     SearchCn,
     FooterCn
+  },
+  data() {
+    return {
+      key: "value"
+    };
+  },
+  created() {
+    //llamo al api
+    this.$root.fetch();
   }
 };
 </script>   

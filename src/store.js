@@ -1,53 +1,40 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from "axios";
+//import axios from "axios";
 
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    searchQuery2: ""
+    name: "",
+    characters: [],
+    page: 1
+
   },
   mutations: {
-    fetch() {
-      const params = {
-        page: this.page,
-        name: this.searchQuery2
-      };
-      axios
-        // { params } for sending type query params
-        //  "https://rickandmortyapi.com/api/character/?page=<>"
-        .get(this.URL, { params })
-        .then(res => {
-          this.characters = res.data.results;
-          console.log(res.data);
-          this.pages = res.data.info.pages;
-          console.log(this.pages);
-          console.log(` hello there ${name}`);
-        })
-        .catch(err => {
-          console.error(err.message);
-        });
+    setName: function (state, Name) {
+      state.name = Name;
     },
-    searchCharacter(searchQuery) {
-      this.page = 1;
-      this.fetch(), console.log(searchQuery);
+    setCharacters: function (state, Characters) {
+      state.characters = Characters;
+    },
+    setPage: function (state, Page) {
+      state.page = Page;
+    },
 
-    },
-    test() {
-      console.log('hello')
-    },
-    getApiCharacter(searchQuery2) {
-      this.page = 1;
-      // this.search,
-      this.fetch(), console.log(searchQuery2);
-      console.log("saludos ");
-    }
   },
-
-
-
+  actions: {
+    setCharacters: function (context, characters) {
+      context.commit('setCharacters', characters);
+    },
+    setName: function (context, Name) {
+      context.commit('setName', Name);
+    },
+    setPage: function (context, Page) {
+      context.commit('setPage', Page);
+    },
+  }
 })
 
 export default store
