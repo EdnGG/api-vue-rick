@@ -25,7 +25,7 @@
           </b-card>
         </div>
       </b-row>
-      <b-row class="pagination text-center">
+      <b-row class="search-pagination text-center">
         <b-col>
           <b-nav tabs align="center" role="navigation" aria-label="pagination" class="pagination">
             <b-nav-item v-on:click="changePage(page -1)">Preview</b-nav-item>
@@ -51,8 +51,7 @@ export default {
     return {
       URL: "https://rickandmortyapi.com/api/character/",
       page: 1,
-      pages: 1,
-      searchQuer: ""
+      pages: 1
     };
   },
   computed: {
@@ -66,9 +65,20 @@ export default {
   },
   methods: {
     changePage(page) {
-      // this.page = page <= 0 || page > this.pages ? this.page : page;
-      this.$store.dispatch("setPage", page);
-      this.$root.fetch();
+      if (page !== 0) {
+        this.page = page;
+        // this.page = page <= 0 || page > this.pages ? this.page : page;
+        this.$store.dispatch("setPage", page);
+        this.$store.dispatch("nextPage", nextPage);
+        this.$store.dispatch("prevPage", prevPage);
+        this.$root.fetch();
+        console.log("Valor de this.page " + this.page);
+      } else if (this.page >= 31) {
+        console.log("Error 1");
+        page = 30;
+      } else {
+        console.log("Error 2");
+      }
     }
   }
 };
@@ -82,9 +92,15 @@ export default {
   justify-content: center;
   margin-top: 2%;
   margin-bottom: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
-.pagination {
+.search-pagination {
   margin-top: 6%;
   margin-bottom: 2%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
 }
 </style>

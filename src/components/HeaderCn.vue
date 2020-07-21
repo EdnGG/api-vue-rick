@@ -9,7 +9,7 @@
               <b-form-input
                 placeholder="Search..."
                 v-model="searchQuery"
-                @keyup.enter="searchCharacter"
+                @keyup.enter="getApiCharacter"
               ></b-form-input>
               <b-input-group-append>
                 <b-button variant="outline-secondary" @click="getApiCharacter">Go</b-button>

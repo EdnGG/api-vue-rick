@@ -27,7 +27,7 @@ export default {
   margin-top: 3%;
   margin-bottom: 3%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   justify-content: center;
 }
