@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app-component">
     <SearchCn />
     <FooterCn msg="Welcome to Footer component" />
   </div>
@@ -28,5 +28,9 @@ export default {
 </script>   
 
 <style scoped>
+/* .app-component {
+  display: grid;
+  place-items: center;
+} */
 </style>
 

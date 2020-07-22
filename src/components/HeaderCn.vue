@@ -13,7 +13,6 @@
               ></b-form-input>
               <b-input-group-append>
                 <b-button variant="outline-secondary" @click="getApiCharacter">Go</b-button>
-                <b-button variant="outline-secondary" @click="test">test</b-button>
               </b-input-group-append>
             </b-input-group>
           </div>
@@ -30,7 +29,6 @@ export default {
   data() {
     return {
       searchQuery: ""
-      //searchQuery2: ""
     };
   },
   methods: {
@@ -39,9 +37,6 @@ export default {
       this.$store.dispatch("setPage", 1);
       this.$store.dispatch("setName", this.searchQuery);
       this.$root.fetch();
-    },
-    test() {
-      //this.$store.commit("test");
     }
   },
   computed: {}
