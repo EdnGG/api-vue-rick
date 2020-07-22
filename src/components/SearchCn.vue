@@ -15,10 +15,15 @@
             <template v-slot:header>
               <h4 class="mb-0">{{character.name}}</h4>
             </template>
-            <b-button v-b-toggle.collapse-1 variant="primary">Toggle Collapse</b-button>
+            <b-button v-b-toggle.collapse-1 variant="primary">Details</b-button>
             <b-collapse id="collapse-1" class="mt-2">
               <b-card>
-                <p class="card-text">{{character.name}}</p>
+                <b-card-sub-title class="mb-2">Status: {{character.status}}</b-card-sub-title>
+                <b-card-sub-title class="mb-2">Specie: {{character.species}}</b-card-sub-title>
+                <b-card-sub-title class="mb-2">Type: {{character.type}}</b-card-sub-title>
+                <b-card-sub-title class="mb-2">Gender: {{character.gender}}</b-card-sub-title>
+                <b-card-sub-title class="mb-2">Location: {{character.location.name}}</b-card-sub-title>
+                <!-- <p class="card-text">{{character.name}}</p> -->
                 <!-- <b-button v-b-toggle.collapse-1-inner size="sm">Toggle Inner Collapse</b-button> -->
                 <!-- <b-collapse id="collapse-1-inner" class="mt-2">
                   <b-card>{{character.name}}</b-card>

@@ -1,9 +1,18 @@
 <template>
   <div class="header">
     <b-container>
+      <div class="text-center">
+        <b-img
+          src="https://s1.ibtimes.com/sites/www.ibtimes.com/files/styles/full/public/2018/08/21/rick-morty.jpg"
+          fluid
+          alt="Rick And Morty"
+        ></b-img>
+        <h1>This is the Header component</h1>
+      </div>
+    </b-container>
+    <b-container>
       <b-row class="text-center">
         <b-col>
-          <h1>This is the Header component</h1>
           <div>
             <b-input-group>
               <b-form-input

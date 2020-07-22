@@ -28,9 +28,8 @@ export default {
 </script>   
 
 <style scoped>
-/* .app-component {
-  display: grid;
-  place-items: center;
-} */
+#app {
+  background-color: black;
+}
 </style>
 
