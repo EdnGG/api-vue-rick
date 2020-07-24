@@ -1,13 +1,13 @@
 <template>
   <div class="header">
     <b-container>
-      <div class="text-center">
+      <div class="text-center pb-5">
         <b-img
           src="https://s1.ibtimes.com/sites/www.ibtimes.com/files/styles/full/public/2018/08/21/rick-morty.jpg"
           fluid
           alt="Rick And Morty"
         ></b-img>
-        <h1>This is the Header component</h1>
+        <h1>Made with Vue</h1>
       </div>
     </b-container>
     <b-container>
@@ -53,9 +53,14 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss">
 .header {
-  margin-top: 3%;
-  margin-bottom: 3%;
+  background-color: black;
 }
+html,
+body {
+  background-color: black;
+}
+
+// @import "../components/scss/main.scss";
 </style>

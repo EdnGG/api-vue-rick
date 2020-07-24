@@ -12,7 +12,7 @@ const store = new Vuex.Store({
     page: 1,
     nextPage: true,
     prevPage: false,
-    id: null
+    //id: null
 
   },
   mutations: {
@@ -30,9 +30,9 @@ const store = new Vuex.Store({
     },
     prevPage: function (state, prevPage) {
       state.prevPage = prevPage
-    }
-    // showCharacter: function (state, showCharacter) {
-    //   state.showCharacter = showCharacter
+    },
+    // showCharacterInfo: function (state, showCharacter) {
+    //   state.id = showCharacter
     // }
 
   },
@@ -51,9 +51,9 @@ const store = new Vuex.Store({
     },
     prevPage: function (context, prevPage) {
       context.commit('prevPage', prevPage)
-    }
-    // showCharacter: function (context, showCharacter) {
-    //   context.commit("showCharacter", showCharacter)
+    },
+    // showCharacterInfo: function (context, showCharacter) {
+    //   context.commit("showCharacter", id)
     // }
   }
 })

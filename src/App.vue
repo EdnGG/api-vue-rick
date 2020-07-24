@@ -27,8 +27,13 @@ export default {
 };
 </script>   
 
-<style scoped>
-#app {
+<style lang="scss">
+@import "./scss/main.scss";
+
+body {
+  background-color: black;
+}
+.app-component {
   background-color: black;
 }
 </style>

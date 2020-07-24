@@ -3,9 +3,9 @@
     <b-container>
       <b-row class="text-center">
         <b-col>
-          <div>
-            <h1>{{ msg }}</h1>
-          </div>
+          <!-- social media -->
+
+          <!-- Ends social media -->
         </b-col>
       </b-row>
     </b-container>
@@ -22,8 +22,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss">
 .footer {
+  background-color: black;
   margin-top: 3%;
   margin-bottom: 3%;
   display: flex;
