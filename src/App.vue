@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="app-component">
     <SearchCn />
-    <FooterCn msg="Welcome to Footer component" />
+    <FooterCn />
   </div>
 </template>
 
@@ -13,17 +13,17 @@ export default {
   name: "App",
   components: {
     SearchCn,
-    FooterCn
+    FooterCn,
   },
   data() {
     return {
-      key: "value"
+      key: "value",
     };
   },
   created() {
     //llamo al api
     this.$root.fetch();
-  }
+  },
 };
 </script>   
 

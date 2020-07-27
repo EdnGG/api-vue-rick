@@ -1,7 +1,6 @@
 <template>
   <div class="main-container">
     <HeaderCn />
-    <!-- checar aqui -->
     <b-container class="text-center main">
       <b-row class="text-center mt-5">
         <b-col cols="12" md="6" v-for="character of characters" v-bind:key="character.id">
@@ -48,21 +47,21 @@ import HeaderCn from "./HeaderCn";
 import { mapState } from "vuex";
 export default {
   name: "search-cn",
-  data: function() {
+  data: function () {
     return {
       page: 1,
       pages: 1,
       modal: false,
       // currentCharacter: "",
       modalShow: false,
-      id: ""
+      id: "",
     };
   },
   computed: {
-    ...mapState(["characters"])
+    ...mapState(["characters"]),
   },
   components: {
-    HeaderCn
+    HeaderCn,
   },
   created() {},
   methods: {
@@ -71,8 +70,8 @@ export default {
       this.$store.dispatch("setPage", page);
       this.$root.fetch();
       console.log("Valor de this.page " + this.page);
-    }
-  }
+    },
+  },
 };
 </script>
 

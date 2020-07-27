@@ -1,7 +1,14 @@
 import Vue from 'vue'
 import App from './App.vue'
-// import router from './route'
 import store from './store'
+import 'vue-material-design-icons/styles.css'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
+// import { faGithub } from '@fortawesome/pro-regular-svg-icons'
+
 
 
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
@@ -13,12 +20,18 @@ Vue.use(IconsPlugin)
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 import axios from "axios";
+
+library.add(faFontAwesome, faCoffee)
+
+
+// Using vue font awesome
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 
 new Vue({
-  //router,
   store,
   render: h => h(App),
   methods: {

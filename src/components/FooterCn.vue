@@ -1,10 +1,16 @@
 <template>
   <div class="footer">
     <b-container>
-      <b-row class="text-center">
+      <b-row class="text-center icons">
         <b-col>
           <!-- social media -->
+          <a target="_blank">
+            <font-awesome-icon icon="coffee" size="lg" inverse />
+          </a>
 
+          <a href="https://github.com/EdnGG" target="_blank">
+            <font-awesome-icon icon="coffee" size="lg" inverse />
+          </a>
           <!-- Ends social media -->
         </b-col>
       </b-row>
@@ -13,11 +19,18 @@
 </template>
 
 <script>
+// import { mdiGithub } from "@mdi/js";
 export default {
   name: "footer-cn",
-  props: {
-    msg: String
-  }
+  data() {
+    return {
+      // coffee: "https://www.linkedin.com/in/eden-gomez-5002a386/",
+      // github: "https://github.com/EdnGG",
+      // myIcon: coffee,
+    };
+  },
+  props: {},
+  components: {},
 };
 </script>
 
@@ -31,5 +44,10 @@ export default {
   flex-direction: row;
   text-align: center;
   justify-content: center;
+}
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 </style>
